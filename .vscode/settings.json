@@ -1,0 +1,16 @@
+{
+    "sqltools.connections": [
+        {
+            "connectionTimeout": 30,
+            "database": "cdatabase",
+            "dialect": "MySQL",
+            "isActive": false,
+            "isConnected": false,
+            "name": "MySQL80",
+            "password": "123456",
+            "port": 3306,
+            "server": "localhost",
+            "username": "root"
+        }
+    ]
+}
