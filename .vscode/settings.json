@@ -2,7 +2,7 @@
     "sqltools.connections": [
         {
             "connectionTimeout": 30,
-            "database": "cdatabase",
+            "database": "manager_system_database",
             "dialect": "MySQL",
             "isActive": false,
             "isConnected": false,
@@ -12,5 +12,6 @@
             "server": "localhost",
             "username": "root"
         }
-    ]
+    ],
+    "java.configuration.updateBuildConfiguration": "automatic"
 }
