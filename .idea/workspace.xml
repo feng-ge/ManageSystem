@@ -48,10 +48,10 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="File.Encoding" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -313,7 +313,11 @@
       <workItem from="1569675763286" duration="3376000" />
       <workItem from="1569769545739" duration="1025000" />
       <workItem from="1569825325100" duration="3608000" />
-      <workItem from="1569842033740" duration="2054000" />
+      <workItem from="1569842033740" duration="2671000" />
+      <workItem from="1570019073751" duration="596000" />
+      <workItem from="1570609719762" duration="1071000" />
+      <workItem from="1570669629869" duration="3130000" />
+      <workItem from="1570678858454" duration="1774000" />
     </task>
     <servers />
   </component>

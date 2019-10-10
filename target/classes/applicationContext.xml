@@ -12,9 +12,17 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
-    <context:component-scan base-package="com" /></context:component-scan>
+    <context:component-scan base-package="com" />
 
     <context:property-placeholder location="classpath:db.properties" />
+    <bean id="account" class="com.bean.user">
+        <property name="email" value="456@qq.com" />
+        <property name="id" value="1" />
+        <property name="username" value="www" />
+        <property name="password" value="www" />
+        <property name="type" value="1" />
+
+	</bean>
 
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
@@ -45,7 +53,7 @@
 	        <tx:method name="*"/>
 	        <tx:method name="get*" read-only="true"/>
 	    </tx:attributes>
-	</tx:advice> -->
+	</tx:advice>
 
 
 </beans>

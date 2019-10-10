@@ -31,9 +31,9 @@
 
     <table tableName="classify" domainObjectName="classify"></table>
     <table tableName="essay" domainObjectName="essay"></table>
-    <table tableName="pro" domainObjectName="pro"></table>
+    <table tableName="power" domainObjectName="power"></table>
     <table tableName="reply" domainObjectName="reply"></table>
-    <table tableName="user" domainObjectName="user"></table>
+    <table tableName="t_user" domainObjectName="t_user"></table>
     <table tableName="user_info" domainObjectName="user_info"></table>
    
   </context>
