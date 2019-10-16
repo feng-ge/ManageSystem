@@ -13,22 +13,16 @@
 	http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
     <context:component-scan base-package="com" />
+<!--	扫描注解了的包-->
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
 
     <context:property-placeholder location="classpath:db.properties" />
-    <bean id="account" class="com.bean.user">
-        <property name="email" value="456@qq.com" />
-        <property name="id" value="1" />
-        <property name="username" value="www" />
-        <property name="password" value="www" />
-        <property name="type" value="1" />
-
-	</bean>
 
 
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-	    <property name="driverClassName" value="${jdbc.driver}"></property>
-	    <property name="url" value="${jdbc.url}"></property>
-	    <property name="username" value="${jdbc.username}"></property>
+	    <property name="driverClass" value="${jdbc.driver}"></property>
+	    <property name="jdbcUrl" value="${jdbc.url}"></property>
+	    <property name="user" value="${jdbc.username}"></property>
 	    <property name="password" value="${jdbc.password}"></property>
 	</bean>
 
@@ -44,16 +38,16 @@
 	<bean id="trancationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 	    <property name="dataSource" ref="dataSource"></property>
 	</bean>
-	<aop:config>
-	    <aop:pointcut expression="execution(* com.service..*(..))" id="txPoint"/>
-	    <aop:advisor advice-ref="txAdice" pointcut-ref="txPoint"/>
-	</aop:config>
-	<tx:advice id="txAdice" transaction-manager="transactionManager">
-	    <tx:attributes>
-	        <tx:method name="*"/>
-	        <tx:method name="get*" read-only="true"/>
-	    </tx:attributes>
-	</tx:advice>
+<!--	<aop:config>-->
+<!--	    <aop:pointcut expression="execution(* com.service..*(..))" id="txPoint"/>-->
+<!--	    <aop:advisor advice-ref="txAdice" pointcut-ref="txPoint"/>-->
+<!--	</aop:config>-->
+<!--	<tx:advice id="txAdice" transaction-manager="transactionManager">-->
+<!--	    <tx:attributes>-->
+<!--	        <tx:method name="*"/>-->
+<!--	        <tx:method name="get*" read-only="true"/>-->
+<!--	    </tx:attributes>-->
+<!--	</tx:advice>-->
 
 
 </beans>

@@ -8,15 +8,14 @@
 	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 	
-    <!-- 扫杝包 -->
-	<context:component-scan base-package="com" use-default-filters="false">
-	    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    <!-- 扫包 -->
+	<context:component-scan base-package="com" >
+<!--	    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
 	</context:component-scan>
-	<bean
-            class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-            p:prefix="/WEB-INF/jsp/"
-            p:suffix=".jsp" />
-    </bean>
-	<mvc:default-servlet-handler/>
+	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".html"></property>
+	</bean>
+	<mvc:default-servlet-handler />
 	<mvc:annotation-driven></mvc:annotation-driven>
     </beans>
