@@ -13,7 +13,6 @@ public class Utilstest {
     @Before("execution(public void com.test.classtest2.test1())")
     public void logstart(){
         System.out.println("start");
-
     }
     @After("execution(public void com.test.classtest2.test1())")
     public void logreturn(){
