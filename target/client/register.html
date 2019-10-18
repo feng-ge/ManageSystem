@@ -60,6 +60,7 @@
             $.ajax({
                 url: "/registercheckemail",
                 contentType: "application/json;charset=utf-8",
+                async:false,
                 data: {
                     "email": $("#usermail").val()
                 },
@@ -80,6 +81,7 @@
             $.ajax({
                 url: "/registercheckusername",
                 contentType: "application/json;charset=utf-8",
+                async:false,
                 data: {
                     "username": $("#username").val()
                 },
@@ -120,6 +122,11 @@
                 alert("请输入验证码");
                 return false;
             }
+
+            checkemailval();
+
+            checkusernameval();
+
             if (emailchecknum == 1 || usernamechecknum == 1)
                 return false;
             else {
@@ -131,6 +138,8 @@
         // 验证码读秒
         //^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$  邮箱正则
         function checkEmail() {
+            checkemailval();
+            if (emailchecknum == 1) return false;
             var usermail = document.getElementById("usermail");
             if (usermail.value.length == 0) {
                 alert("请输入邮箱");
@@ -143,6 +152,7 @@
             } else {
                 alert("请输入正确的邮箱格式");
             }
+
             // document.write(patt1.test(usermail));
 
         }

@@ -4,6 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -12,11 +13,12 @@ public class Login {
 
 
     @RequestMapping("/loginaccount")
-    public String loginaccount(String username, String password, HttpServletResponse response) throws IOException {
+    public String loginaccount(String username, String password, HttpSession session) throws IOException {
 //        System.out.println(username+password);
 //        t_user已经获取到了用户注册的用户名账号密码
 //        从数据库中拿出两个值和账号比较
 //        与数据的作比较，错误则返回
+        session.setAttribute("user_session",username);
         return "redirect:/";
 
     }

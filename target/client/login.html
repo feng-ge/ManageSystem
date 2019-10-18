@@ -1,65 +1,112 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>登录</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/mycss.css">
+    <meta charset="utf-8">
+    <title>登录</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
 </head>
 <body>
-   <!-- //导航栏 -->
-   <nav class="navbar navbar-default">
-      <div class="container">
-         <div class="navbar-header">
+<!-- //导航栏 -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
             <div class="navbar-brand">拉网线期刊</div>
-         </div>
-         <ul class="nav navbar-nav">
+        </div>
+        <ul class="nav navbar-nav">
             <li><a href="/">网站首页</a></li>
             <li><a href="process">服务流程</a></li>
             <li><a href="submission">在线投稿</a></li>
             <li><a href="aboutus">关于我们</a></li>
             <li><a href="contactus">联系我们</a></li>
-         </ul>
-         <div class="ul nav navbar-nav navbar-right">
+        </ul>
+        <div class="ul nav navbar-nav navbar-right">
             <li class="active"><a href="login">登录</a></li>
             <li><a href="register">注册</a></li>
             <li><a href="personal">个人中心</a></li>
-         </div>
-      </div>
-   </nav>
+        </div>
+    </div>
+</nav>
 
-   <div class="container" style="width:500px">
-      <form method="POST" action="#">
-          <div class="form-group">
-              <label for="exampleInputEmail1">账号</label>
-              <input id="username" class="form-control" placeholder="输入账号" name="username">
-          </div>
-          <div class="form-group">
-              <label for="exampleInputPassword1">密码</label>
-              <input id="password" type="password" class="form-control" placeholder="输入密码" name="password">
-          </div>
-          <div class="checkbox">
-              <label><input type="checkbox" name="autoLogin"> 自动登录 </label>
-          </div>
-          <button type="submit" class="btn btn-default" onclick="return checkInput();">登录</button>
-      </form>
+<div class="container" style="width:500px">
+    <form method="POST" action="loginaccount">
+        <div class="form-group">
+            <label for="exampleInputEmail1">账号</label>
+            <input id="username" class="form-control" placeholder="输入账号" name="username" oninput="settext()">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">密码</label>
+            <input id="password" type="password" class="form-control" placeholder="输入密码" name="password"
+                   oninput="settext()"
+            >
+        </div>
+        <div><p id="logincheckerror"></p></div>
+        <div class="checkbox">
+            <label><input type="checkbox" name="autoLogin" value="1"> 自动登录 </label>
+        </div>
+        <button type="submit" class="btn btn-default" onclick="return checkInput();">登录</button>
+    </form>
 
-      <script type="text/javascript">
-          function checkInput() {
-              var username = document.getElementById("username");
-              if (username.value.length == 0) {
-                  alert("请输入账号");
-                  return false;
-              }
+    <script type="text/javascript">
+        function sendinfo() {
+            $.ajax({
+                url: "/logincheck",
+                contentType: "application/json;charset=utf-8",
+                async: false,
+                data: {
+                    "username": $("#username").val(),
+                    "password": $("#password").val()
+                },
+                success: function (data) {
+                    if (data == 1) {
+                        checkaccount = 1;
+                        $("#logincheckerror").text("账号或密码错误");
+                    } else {
+                        checkaccount = 0;
+                    }
+                }
+            })
+        }
 
-              var password = document.getElementById("password");
-              if (password.value.length == 0) {
-                  alert("请输入密码");
-                  return false;
-              }
-              return true;
-          }
-      </script>
-  </div>
+        function settext() {
+            $("#logincheckerror").text("");
+        }
+
+        $(
+            function () {
+
+
+                $("#username").on("input propertychange", function () {
+                    $("#logincheckerror").text("");
+                });
+                $("#password").on('input propertychange', function () {
+                    $("#logincheckerror").text("");
+                });
+            }
+        )
+
+
+        function checkInput() {
+            var username = document.getElementById("username");
+            if (username.value.length == 0) {
+                alert("请输入账号");
+                return false;
+            }
+
+            var password = document.getElementById("password");
+            if (password.value.length == 0) {
+                alert("请输入密码");
+                return false;
+            }
+
+            sendinfo();
+            if (checkaccount == 0) {
+                alert("登录成功")
+                return true;
+            } else return false;
+        }
+    </script>
+</div>
 </body>
+<script src="js/jquery-3.4.1.min.js"></script>
 </html>

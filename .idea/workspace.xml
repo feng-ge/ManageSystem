@@ -16,6 +16,9 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
     <option name="GROUP_DATA_SOURCES" value="true" />
@@ -62,8 +65,8 @@
         <option value="spring-beans.schema" />
         <option value="Jsp File" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="HTML File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -106,17 +109,17 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="DockerRegistry" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client\src\main\java\com\mapper" />
+      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client\src\main\webapp\js" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client\src\main\webapp" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client\src\main\webapp\WEB-INF" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client\src\main\java\com\mapper" />
-      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\client" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -361,7 +364,9 @@
       <workItem from="1571110544859" duration="23934000" />
       <workItem from="1571191504892" duration="14524000" />
       <workItem from="1571226441718" duration="9110000" />
-      <workItem from="1571276614485" duration="12667000" />
+      <workItem from="1571276614485" duration="16564000" />
+      <workItem from="1571313950095" duration="9741000" />
+      <workItem from="1571363140672" duration="7185000" />
     </task>
     <servers />
   </component>
