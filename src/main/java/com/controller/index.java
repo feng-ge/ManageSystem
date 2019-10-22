@@ -3,6 +3,8 @@ package com.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  *
  */
@@ -27,7 +29,7 @@ public class index {
     }
 
     @RequestMapping("/aboutus")
-    public String aboutus() {
+    public String aboutus(HttpServletRequest request) {
         return "aboutus";
     }
 
@@ -50,5 +52,6 @@ public class index {
     public String personal() {
         return "personal";
     }
+
 
 }

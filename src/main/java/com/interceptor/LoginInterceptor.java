@@ -16,19 +16,21 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object test) throws ServletException, IOException {
         String url = request.getRequestURI();
+//        Cookie[] cookies = request.getCookies();
 //        System.out.println(url);
         if (url.indexOf("/personal") >= 0) {
 
             HttpSession session = request.getSession();
             String user = (String) session.getAttribute("user_session");
             if (user != null) {
-                System.out.println("true");
-                System.out.println(user);
+//                response.getWriter().print(user);
+//                System.out.println(user);
                 return true;
             }
             response.sendRedirect("/login");
             return false;
         }
+
         return true;
     }
 
