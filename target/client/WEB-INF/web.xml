@@ -19,14 +19,24 @@
   <!-- spring MVC 的主控servlet -->
   <servlet-mapping>
     <servlet-name>default</servlet-name>
+    <url-pattern>*.gif</url-pattern>
+    <url-pattern>*.png</url-pattern>
+    <url-pattern>*.jpg</url-pattern>
     <url-pattern>*.js</url-pattern>
-    <url-pattern>*.html</url-pattern>
-    <url-pattern>*.css</url-pattern>
+<!--    <url-pattern>*.css</url-pattern>-->
+    <url-pattern>*.chm</url-pattern>
+    <url-pattern>*.gz</url-pattern>
+    <url-pattern>*.txt</url-pattern>
+    <url-pattern>*.eot</url-pattern>
+    <url-pattern>*.woff</url-pattern>
+    <url-pattern>*.woff2</url-pattern>
     <url-pattern>*.ico</url-pattern>
-    <url-pattern>/img/*</url-pattern>
-    <url-pattern>/fonts/*</url-pattern>
-    <url-pattern>/font/*</url-pattern>
+    <url-pattern>*.ttf</url-pattern>
+    <url-pattern>*.otf</url-pattern>
+    <url-pattern>*.html</url-pattern>
   </servlet-mapping>
+
+
   <servlet>
     <servlet-name>dispatcherServlet</servlet-name>
     <servlet-class>

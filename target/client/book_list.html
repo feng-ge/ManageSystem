@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<!--这个是测试文件，需要放在源文件夹下配合book_list使用-->
+
+
+<body>
+<form>
+    <input type="text" id="test">
+    <input type="button" id="button" value="test" onclick="return searchfor()">
+</form>
+<div id="show">
+    <p>作品：</p>
+    <p>作者：</p>
+    <p>分类：</p>
+    <p>发布日期：</p>
+</div>
+<script type="text/javascript">
+    function searchfor() {
+        $.ajax({
+            url: "/searchbook",
+            data: {
+                "name": $("#test").val()
+            },//需要查询的条件值
+            success: function (data) {
+                $("#show").html(data);
+            },
+            contentType: "application/json;charset=utf-8"
+        });
+    };
+</script>
+</body>
+<script src="js/jquery-3.4.1.min.js"></script>
+</html>

@@ -13,12 +13,17 @@ public class Login {
 
 
     @RequestMapping("/loginaccount")
-    public String loginaccount(String username, String password, HttpSession session) throws IOException {
+    public String loginaccount(String username, String password, HttpSession session, HttpServletResponse response) throws IOException {
 //        System.out.println(username+password);
 //        t_user已经获取到了用户注册的用户名账号密码
 //        从数据库中拿出两个值和账号比较
 //        与数据的作比较，错误则返回
-        session.setAttribute("user_session",username);
+//        Cookie cookie = new Cookie("username",username);
+//        cookie.setMaxAge(24*3600*14);
+//        cookie.setPath("/");
+//        response.addCookie(cookie);
+        session.setAttribute("user_session", username);
+        session.setMaxInactiveInterval(2*3600);
         return "redirect:/";
 
     }
@@ -27,7 +32,7 @@ public class Login {
     public void logincheck(String username, String password, HttpServletResponse response) throws IOException {
         if (username.equals("test") && password.equals("test")) {
             response.getWriter().print(1);
-        }else response.getWriter().print(0);
+        } else response.getWriter().print(0);
 
     }
 

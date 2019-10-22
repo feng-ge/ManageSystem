@@ -35,9 +35,9 @@
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	    <property name="basePackage" value="com.dao"></property>
 	</bean>
-	<bean id="trancationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-	    <property name="dataSource" ref="dataSource"></property>
-	</bean>
+<!--	<bean id="trancationManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">-->
+<!--	    <property name="dataSource" ref="dataSource"></property>-->
+<!--	</bean>-->
 <!--	<aop:config>-->
 <!--	    <aop:pointcut expression="execution(* com.service..*(..))" id="txPoint"/>-->
 <!--	    <aop:advisor advice-ref="txAdice" pointcut-ref="txPoint"/>-->

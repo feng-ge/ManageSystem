@@ -1,13 +1,16 @@
 package com.controller;
 
 import com.bean.t_user;
+import com.bean.t_userExample;
+import com.service.userimpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.util.Map;
+import java.util.Date;
+import java.util.List;
 
 /**
  *
@@ -15,33 +18,36 @@ import java.util.Map;
 @Controller
 public class register {
 
-    //从数据库中取出所有的用户名和邮箱
-    @ModelAttribute
-    public void getinfo(Map<String, Object> map) {
-//        取出数据库的值，放到map中
-//        map.put("account",account);
-    }
+    @Autowired
+    userimpl userimpl;
 
-    //  注册,成功就跳到登录,失败就跳回注册
+
+    //  注册成功就保存数据库然后跳到首页
     @RequestMapping("/registeraccount")
-    public String registeraccount(@ModelAttribute("account") t_user t_user) {
-//        System.out.println(t_user.getEmail());
-//        t_user已经获取到了用户注册的账号密码
+    public String registeraccount(t_user t_user) {
+        Date date = new Date();
+        t_user.setcTime(date);
+        userimpl.insertSelective(t_user);
         return "redirect:/";
     }
 
+    //        拿到了Email，和数据作比较
     @RequestMapping("/registercheckemail")
     public void registercheckemail(String email, HttpServletResponse response) throws IOException {
-//        拿到了Email，和数据作比较
-        if ("test".equals(email)) {
+        t_userExample t_userExample = new t_userExample();
+        t_userExample.or().andEmailEqualTo(email);
+        List<t_user> list = userimpl.selectByExample(t_userExample);
+        if (list.size() >= 1) {
             response.getWriter().print(1);
         } else response.getWriter().print(0);
     }
 
     @RequestMapping("/registercheckusername")
     public void registercheckusername(String username, HttpServletResponse response) throws IOException {
-//        拿到了username，和数据的作比较就行了。
-        if ("test".equals(username)) {
+        t_userExample t_userExample = new t_userExample();
+        t_userExample.or().andUsernameEqualTo(username);
+        List<t_user> list = userimpl.selectByExample(t_userExample);
+        if (list.size() >= 1) {
             response.getWriter().print(1);
         } else response.getWriter().print(0);
     }

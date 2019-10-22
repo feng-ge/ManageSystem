@@ -11,13 +11,16 @@
     <!-- 扫包 -->
 	<context:component-scan base-package="com" >
 <!--	    <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+
 	</context:component-scan>
+	<mvc:resources mapping="/*/css/**" location="/css/" />
+	<mvc:resources mapping="/*/js/**" location="/js/" />
 	<bean id="internalResourceViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/"></property>
 		<property name="suffix" value=".html"></property>
 	</bean>
 	<mvc:default-servlet-handler />
-	<mvc:annotation-driven></mvc:annotation-driven>
+	<mvc:annotation-driven />
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/personal"/>
