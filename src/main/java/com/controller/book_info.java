@@ -1,6 +1,6 @@
 package com.controller;
 
-import com.bean.essay;
+import com.bean.Essay;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
@@ -17,7 +17,7 @@ import java.io.IOException;
  */
 
 class bookinfo {
-    File html = new File("F:\\杂\\我学尼玛的习\\期刊稿件管理系统\\client\\src\\main\\webapp\\book_info.html");
+    File html = new File("F:\\杂\\我学尼玛的习\\期刊稿件管理系统\\fosu\\src\\main\\webapp\\book_info.html");
     Document document = Jsoup.parse(html, "UTF-8");
 
     bookinfo() throws IOException {
@@ -30,7 +30,7 @@ public class book_info {
 
 
     @RequestMapping("/{book_id}")
-    public void book(@PathVariable String book_id, essay essay, HttpServletResponse response) throws IOException {
+    public void book(@PathVariable String book_id, Essay essay, HttpServletResponse response) throws IOException {
         bookinfo book = new bookinfo();
 //        System.out.println(book_id);
 //        这里拿到了稿件的id，进入数据库按照id查询全部信息
