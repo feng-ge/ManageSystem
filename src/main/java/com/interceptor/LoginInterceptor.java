@@ -18,7 +18,7 @@ public class LoginInterceptor implements HandlerInterceptor {
         String url = request.getRequestURI();
 //        Cookie[] cookies = request.getCookies();
 //        System.out.println(url);
-        if (url.indexOf("/personal") >= 0) {
+        if (url.indexOf("/personal") >= 0 || url.indexOf("/submissionbook") >= 0) {
 
             HttpSession session = request.getSession();
             String username = (String) session.getAttribute("username_session");
@@ -32,6 +32,18 @@ public class LoginInterceptor implements HandlerInterceptor {
             response.getWriter().print("<script   language=javascript>alert('请先登录！');window.location='/login'</script>");
 //            response.sendRedirect("/login");
             return false;
+        }
+        if (url.indexOf("/login") >= 0 || url.indexOf("/register") >= 0) {
+            HttpSession session = request.getSession();
+            String username = (String) session.getAttribute("username_session");
+//            System.out.println(username);
+            if (username != null) {
+//                response.getWriter().print(user);
+//                System.out.println(user);
+                response.sendRedirect("/");
+                return false;
+            }
+
         }
 
         return true;

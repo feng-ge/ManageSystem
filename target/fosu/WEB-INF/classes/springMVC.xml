@@ -23,7 +23,7 @@
 	<mvc:annotation-driven />
 	<mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/personal"/>
+			<mvc:mapping path="/**"/>
 			<bean class="com.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>

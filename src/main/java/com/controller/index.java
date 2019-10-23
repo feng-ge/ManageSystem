@@ -63,6 +63,11 @@ public class index {
         return "personal";
     }
 
+    @RequestMapping("/submissionbook")
+    public String Submissionbook(){
+        return "Submissionbook";
+    }
+
     @RequestMapping("/searchsession")
     public void searchsession(HttpServletRequest request, HttpServletResponse response) throws IOException {
         boolean re = true;

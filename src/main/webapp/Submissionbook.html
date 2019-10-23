@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!-- //导航栏 -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="navbar-brand">拉网线期刊</div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">网站首页</a></li>
+            <li><a href="process">服务流程</a></li>
+            <li><a href="submission">在线投稿</a></li>
+            <li><a href="aboutus">关于我们</a></li>
+            <li><a href="contactus">联系我们</a></li>
+        </ul>
+        <div class="ul nav navbar-nav navbar-right">
+            <li id="login"><a href="login" id="login_a"></a></li>
+            <li id="register"><a href="register" id="register_a"></a></li>
+            <li><a href="personal" id="personal"></a></li>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <h3 class="text-center">投稿事项</h3>
+    <div class="col-sm-offset-2 col-sm-8">
+
+        <p>1.请遵守国家相关法律法规投稿</p>
+        <p>
+            2.我们希望收到的文章是：针对各科学领域和科技行业独到的分析或评论；与本人科研工作有关的值得被分享的内容；一般情况下，文章的篇幅请保持在1000到2000字之间。</p>
+        <p>3.界面保留修改用户投稿的标题和内容</p>
+        <p>4.投稿格式为pdf或者word文档，投稿成功后请耐心等待评稿员完成审稿</p>
+        <p>5........</p>
+
+        <form action="" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="uploadfire">投稿后视为遵守以上规矩,点击下面按钮选择投稿的文档进行上传</label>
+                <input type="file" class="form-control-file center-block" id="uploadfire">
+                <input type="submit" class="btn btn-default btn-lg center-block" value="确认提交">
+            </div>
+        </form>
+    </div>
+
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+    $(function () {
+
+        $.ajax({
+            url: "/searchsession",
+            success: function (data) {
+                if (data != 0) {
+                    $("#personal").html(data);
+                    $("#register").html('<a href="logout" >登出</a>');
+                    $("#login").html("");
+                } else {
+                    $("#personal").html("个人信息");
+                    $("#register_a").html("注册");
+                    $("#login_a").html("登录");
+                }
+            }
+        });
+
+    });
+
+</script>
+</html>

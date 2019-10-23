@@ -29,7 +29,7 @@ public class Login {
         UserExample.or().andEmailEqualTo(username);
         List<User> list = userimple.selectByExample(UserExample);
         User User = list.get(0);
-        System.out.println(autoLogin);
+//        System.out.println(autoLogin);
         if (autoLogin.equals("1,0")) {
             Cookie cookie = new Cookie("username", User.getUsername());
             cookie.setMaxAge(24 * 3600 * 14);

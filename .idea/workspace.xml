@@ -47,6 +47,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -68,6 +69,7 @@
   <component name="ProjectId" id="1SZ3S5nmsjdAKPlh6w7kNSmIotG" />
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com" />
@@ -102,6 +104,7 @@
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
+      <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
         <artifact name="fosu:war exploded">
           <settings>
@@ -112,7 +115,6 @@
       <server-settings>
         <option name="AJP_PORT" value="1099" />
         <option name="BASE_DIRECTORY_NAME" value="Unnamed_fosu_2" />
-        <option name="HTTP_PORT" value="8080" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -206,7 +208,7 @@
       <option name="presentableId" value="Default" />
       <updated>1571757286335</updated>
       <workItem from="1571757287992" duration="10979000" />
-      <workItem from="1571800220615" duration="12986000" />
+      <workItem from="1571800220615" duration="17652000" />
     </task>
     <servers />
   </component>
