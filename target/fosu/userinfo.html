@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mycss.css">
+    <script src="js/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+<!-- //导航栏 -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="navbar-brand">拉网线期刊</div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="/">网站首页</a></li>
+            <li><a href="process">服务流程</a></li>
+            <li><a href="submission">在线投稿</a></li>
+            <li><a href="aboutus">关于我们</a></li>
+            <li><a href="contactus">联系我们</a></li>
+        </ul>
+        <div class="ul nav navbar-nav navbar-right">
+            <li id="login"><a href="login" id="login_a"></a></li>
+            <li id="register"><a href="register" id="register_a"></a></li>
+            <li><a href="personal" id="personal"></a></li>
+        </div>
+    </div>
+</nav>
+
+<div class="container">
+    <form action="changeuserinfo" method="post">
+
+        <div class="col-sm-offset-2 col-sm-8">
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="username">用户名</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" name="username" readonly="readonly" id="usernameinput">
+
+            </div>
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="email" >邮箱</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" name="email" readonly="readonly" id="emailinput">
+            </div>
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="password">密码</span>
+                </div>
+                <input type="password" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" name="password" id="passwordinput">
+            </div>
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="phone">手机</span>
+                </div>
+                <input type="text" class="form-control" aria-label="Sizing example input"
+                       aria-describedby="inputGroup-sizing-default" name="phone" id="phoneinput">
+            </div>
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="sex">性别</label>
+                </div>
+                <select class="custom-select" id="sex" name="sex">
+                    <option selected value="未知">未知</option>
+                    <option value="男">男</option>
+                    <option value="女">女</option>
+                </select>
+            </div>
+            <div class="input-group mb-3 center-block">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="education">学历</label>
+                </div>
+                <select class="custom-select" id="education" name="education">
+                    <option selected VALUE="学历">选择学历...</option>
+                    <option value="小学及以下">小学及以下</option>
+                    <option value="初中">初中</option>
+                    <option value="高中">高中</option>
+                    <option value="大学本科及以上">大学本科及以上</option>
+                </select>
+            </div>
+            <div class="input-group center-block">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">简介</span>
+                </div>
+                <textarea class="form-control" aria-label="With textarea" name="introduce" id="introduceinput"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-default" >修改</button>
+        </div>
+
+
+
+    </form>
+
+
+</div>
+
+</body>
+<script type="text/javascript">
+    $(function () {
+
+        $.ajax({
+            url: "/searchsession",
+            success: function (data) {
+                if (data != 0) {
+                    $("#personal").html(data);
+                    $("#register").html('<a href="logout" >登出</a>');
+                    $("#login").html("");
+                } else {
+                    $("#personal").html("个人信息");
+                    $("#register_a").html("注册");
+                    $("#login_a").html("登录");
+                }
+            }
+        });
+        $.ajax({
+            url: "/changeusername",
+            success: function (data) {
+                $("#usernameinput").val(data);
+            }
+        });
+        $.ajax({
+            url: "/changeemail",
+            success: function (data) {
+                $("#emailinput").val(data);
+            }
+        });
+        $.ajax({
+            url: "/changepassword",
+            success: function (data) {
+                $("#passwordinput").val(data);
+            }
+        });
+        $.ajax({
+            url: "/changephone",
+            success: function (data) {
+                if (data == "null")
+                $("#phoneinput").val("");
+                else
+                    $("#phoneinput").val(data);
+
+            }
+        });
+        $.ajax({
+            url: "/changeintroduce",
+            success: function (data) {
+                if (data == "null")
+                $("#introduceinput").val("");
+                else
+                    $("#introduceinput").val(data);
+            }
+        });
+
+
+    });
+
+</script>
+</html>

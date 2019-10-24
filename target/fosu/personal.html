@@ -45,21 +45,22 @@
             <h5>便捷入口</h5>
             <hr class="my-4">
             <a class="btn btn-primary col-sm-3 " href="submissionbook" role="button">投稿入口</a>
-            <a class="btn btn-primary col-sm-3 col-sm-offset-1" href="#" role="button">投稿一览</a>
-            <a class="btn btn-primary col-sm-3 col-sm-offset-1" href="#" role="button">查阅稿件</a>
+            <a class="btn btn-primary col-sm-3 col-sm-offset-1" href="useressay" role="button">投稿一览</a>
+            <a class="btn btn-primary col-sm-3 col-sm-offset-1" href="/" role="button">查阅稿件</a>
         </div>
 
-        <div class="col-md-12 align-self-end">
+
+        <div class="col-md-12">
             <h5>功能模块</h5>
             <hr class="my-4">
             <div class="btn-group-lg" role="group" aria-label="Basic example">
-                <a class="btn btn-secondary col-sm-4" href="#" role="button">修改资料</a>
-                <a class="btn btn-secondary col-sm-4" href="#" role="button">期刊查阅</a>
+                <a class="btn btn-secondary col-sm-4" href="changeuserinfourl" role="button">修改资料</a>
+                <a class="btn btn-secondary col-sm-4" href="/" role="button">期刊查阅</a>
                 <a class="btn btn-secondary col-sm-4" href="#" role="button">用户留言</a>
             </div>
             <div class="btn-group-lg" role="group" aria-label="Basic example">
                 <a class="btn btn-secondary col-sm-4" href="submissionbook" role="button">我要投稿</a>
-                <a class="btn btn-secondary col-sm-4" href="#" role="button">投稿历史</a>
+                <a class="btn btn-secondary col-sm-4" href="useressay" role="button">投稿历史</a>
                 <a class="btn btn-secondary col-sm-4" href="#" role="button">more</a>
             </div>
 
@@ -153,6 +154,20 @@
                 } else if (data == 2) {
                     $("#usertag").html("专家");
                 } else $("#usertag").html("管理员");
+            }
+        });
+
+        $.ajax({
+            url: "/personbooknum",
+            success: function (data) {
+                $("#booknum").html(data);
+            }
+        });
+
+        $.ajax({
+            url: "/personcommitbooknum",
+            success: function (data) {
+                $("#commitbooknum").html(data);
             }
         });
 

@@ -31,12 +31,17 @@ public class Login {
         User User = list.get(0);
 //        System.out.println(autoLogin);
         if (autoLogin.equals("1,0")) {
-            Cookie cookie = new Cookie("username", User.getUsername());
-            cookie.setMaxAge(24 * 3600 * 14);
-            cookie.setPath("/");
-            response.addCookie(cookie);
+            Cookie cookie1 = new Cookie("username", User.getUsername());
+            Cookie cookie2 = new Cookie("userid",  String.valueOf(User.getId()));
+            cookie1.setMaxAge(24 * 3600 * 14);
+            cookie1.setPath("/");
+            cookie2.setMaxAge(24 * 3600 * 14);
+            cookie2.setPath("/");
+            response.addCookie(cookie1);
+            response.addCookie(cookie2);
         }
         session.setAttribute("username_session", User.getUsername());
+        session.setAttribute("userid", User.getId());
 //        System.out.println(User.getUsername());
         session.setMaxInactiveInterval(2 * 3600);
         return "redirect:/";

@@ -6,7 +6,6 @@ import org.jsoup.nodes.Document;
 import org.jsoup.select.Elements;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
@@ -25,11 +24,10 @@ class bookinfo {
 }
 
 @Controller
-@RequestMapping("/book")
+
 public class book_info {
 
 
-    @RequestMapping("/{book_id}")
     public void book(@PathVariable String book_id, Essay essay, HttpServletResponse response) throws IOException {
         bookinfo book = new bookinfo();
 //        System.out.println(book_id);

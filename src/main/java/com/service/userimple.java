@@ -16,30 +16,30 @@ public class userimple implements UserMapper {
 
     @Autowired
     UserMapper userMapper;
+
     @Override
     public long countByExample(UserExample example) {
-        return 0;
+        return userMapper.countByExample(example);
     }
 
     @Override
     public int deleteByExample(UserExample example) {
-        return 0;
+        return userMapper.deleteByExample(example);
     }
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
-        return 0;
+        return userMapper.deleteByPrimaryKey(id);
     }
 
     @Override
     public int insert(User record) {
-        return 0;
+        return userMapper.insert(record);
     }
 
     @Override
     public int insertSelective(User record) {
-        userMapper.insertSelective(record);
-        return 0;
+        return userMapper.insertSelective(record);
     }
 
     @Override
@@ -54,21 +54,21 @@ public class userimple implements UserMapper {
 
     @Override
     public int updateByExampleSelective(User record, UserExample example) {
-        return 0;
+        return userMapper.updateByExampleSelective(record, example);
     }
 
     @Override
     public int updateByExample(User record, UserExample example) {
-        return 0;
+        return userMapper.updateByExample(record, example);
     }
 
     @Override
     public int updateByPrimaryKeySelective(User record) {
-        return 0;
+        return userMapper.updateByPrimaryKeySelective(record);
     }
 
     @Override
     public int updateByPrimaryKey(User record) {
-        return 0;
+        return userMapper.updateByPrimaryKey(record);
     }
 }
