@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/mycss.css">
+    <script src="/js/jquery-3.4.1.min.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body>
+<!-- //导航栏 -->
+<nav class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <div class="navbar-brand">拉网线期刊</div>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class="active"><a href="/">网站首页</a></li>
+            <li><a href="/process">服务流程</a></li>
+            <li><a href="/submission">在线投稿</a></li>
+            <li><a href="/aboutus">关于我们</a></li>
+            <li><a href="/contactus">联系我们</a></li>
+        </ul>
+        <div class="ul nav navbar-nav navbar-right">
+            <li id="login"><a href="/login" id="login_a"></a></li>
+            <li id="register"><a href="/register" id="register_a"></a></li>
+            <li><a href="/personal" id="personal"></a></li>
+        </div>
+    </div>
+</nav>
+
+
+<!-- 搜索框 -->
+<div class="row">
+    <div class="col-lg-4">
+        <!-- 放空 -->
+    </div><!-- /.col-lg-6 -->
+    <form action="s" method="post">
+        <div class="col-lg-4">
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search for..." name="searchname">
+                <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">搜索一哈!</button>
+      </span>
+            </div><!-- /input-group -->
+        </div>
+
+    </form>
+    <!-- /.col-lg-6 -->
+    <div class="col-lg-4">
+        <!-- 放空 -->
+    </div>
+</div><!-- /.row -->
+
+<br>
+
+
+<div class="container">
+    <!-- //左侧选择栏 -->
+    <div class="col-sm-2">
+        <div class="list-group side-bar">
+            <div class="list-group title">全部分类</div>
+            <a href="/s/1" class="list-group-item">基础科学</a>
+            <a href="/s/2" class="list-group-item">工程科技</a>
+            <a href="/s/3" class="list-group-item">农业科技</a>
+            <a href="/s/4" class="list-group-item">医药科学</a>
+            <a href="/s/5" class="list-group-item">哲学和人文科学</a>
+        </div>
+    </div>
+
+    <br/>
+    <br/>
+    <!-- //右侧 -->
+    <div class="col-sm-9">
+        <div class="col-sm-4 text-center">
+            <p>作品名称</p>
+        </div>
+        <div class="col-sm-2 text-center">
+            <p>分类</p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p>作者</p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p>发表时间</p>
+        </div>
+    </div>
+    <div class="col-sm-9" id="show">
+
+        <div class="col-sm-4 text-center">
+            <a href="">作品名称</a>
+        </div>
+        <div class="col-sm-2 text-center">
+            <p>分类</p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p>作者</p>
+        </div>
+        <div class="col-sm-3 text-center">
+            <p>发表时间</p>
+        </div>
+
+
+
+    </div>
+
+
+
+
+</div>
+
+<script type="text/javascript">
+    $(function () {
+
+        $.ajax({
+            url: "/searchsession",
+            success: function (data) {
+                if (data != 0) {
+                    $("#personal").html(data);
+                    $("#register").html('<a href="logout" >登出</a>');
+                    $("#login").html("");
+                } else {
+                    $("#personal").html("个人信息");
+                    $("#register_a").html("注册");
+                    $("#login_a").html("登录");
+                }
+            }
+        });
+
+
+
+
+
+    });
+
+</script>
+
+</body>
+</html>
