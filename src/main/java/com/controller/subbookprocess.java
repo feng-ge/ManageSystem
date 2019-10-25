@@ -76,8 +76,8 @@ public class subbookprocess {
 
         if (a >= 3) {
             a = 3;
-            essay.setCanpublish(true);
-            essayMapper.updateByPrimaryKeySelective(essay);
+//            essay.setCanpublish(true);
+//            essayMapper.updateByPrimaryKeySelective(essay);
             Elements alertmessage = document.select("#alertmessage");
             alertmessage.html("专家审稿已经完成，等待管理员发布");
         }

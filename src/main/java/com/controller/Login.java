@@ -45,7 +45,6 @@ public class Login {
 //        System.out.println(User.getUsername());
         session.setMaxInactiveInterval(2 * 3600);
         return "redirect:/";
-
     }
 
     @RequestMapping("/logincheck")

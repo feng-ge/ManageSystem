@@ -93,22 +93,22 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\webapp" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\webapp" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\java\com" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\java\controller" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\resources" />
-      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\webapp" />
       <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\java\test" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\杂\我学尼玛的习\期刊稿件管理系统\fosu\src\main\webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -252,10 +252,22 @@
       <workItem from="1571800220615" duration="28409000" />
       <workItem from="1571844255521" duration="889000" />
       <workItem from="1571882531852" duration="36174000" />
+      <workItem from="1571971599693" duration="12109000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/controller/useressay.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
